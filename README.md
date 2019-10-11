@@ -77,3 +77,10 @@ In the above two plots,
 
 - **P**: Lag value where PACF chart crosses upper confidence intervals.
 - **Q**: Lag value where ACF chart crosses upper confidence intervals.
+
+## References
+
+[1] Kaggle, [Air Passenges Dataset](https://www.kaggle.com/rakannimer/air-passengers)
+[2] Medium, [Time Series](https://medium.com/greyatom/time-series-b6ef79c27d31)
+[3] Towards Data Science, Medium, [Time Series Forecasting - ARIMA model](https://towardsdatascience.com/time-series-forecasting-arima-models-7f221e9eee06)
+[4] Aileen Nielsen, [Time Series Analysis with Python](https://github.com/AileenNielsen/TimeSeriesAnalysisWithPython)
