@@ -17,7 +17,7 @@ For practical purposes we can assume the series to be stationary if it has const
 
 - Constant mean
 - Constant variance
-- An autocovariance that does not depend on time.
+- Time independent autocovariance
 
 we can check stationarity using the following:
 
@@ -47,3 +47,33 @@ Time series are non-stationary because of following 2 reasons:
 
 - **Differencing**: Take the difference of the observation at a particular instant with that at the previous instant.
 - **Decomposition**: Both trend and seasonality are modeled separately and the remaining part of the series is returned.
+
+# Forecasting the Time Series
+
+## ARIMA Model (Auto-Regressive Integrated Moving Averages)
+
+- **Auto-Regression (AR)**: A time series model that uses observations from previous time steps as input to a regression equation to predict the value at the next time step.
+- **Moving Average (MA)**: A moving-average model is conceptually a linear regression of the current value of the series against current and previous (observed) white noise error terms or random shocks.
+
+So ARIMA is a model that uses
+- The dependent relationship between an observation and some number of lagged observations.
+- Differencing of raw observations (e.g. subtracting an observation from an observation at the previous time step) in order to make the time series stationary.
+- The dependency between an observation and a residual error from a moving average model applied to lagged observations.
+
+The ARIMA forecasting for a stationary time series is nothing but a linear (like a linear regression) equation. The predictors depend on the parameters (p,d,q) of the ARIMA model:
+
+1. Number of AR (Auto-Regressive) terms (p)
+2. Number of MA (Moving Average) terms (q)
+3. Number of Differences (d)
+
+### Determining value of P & Q
+
+Following 2 plots are used to determine these numbers:
+
+1. **Autocorrelation Function (ACF)**: It is a measure of the correlation between the the time series with a lagged version of itself.
+2. **Partial Autocorrelation Function (PACF)**:  This measures the correlation between the time series with a lagged version of itself but after eliminating the variations already explained by the intervening comparisons.
+
+In the above two plots,
+
+- **P**: Lag value where PACF chart crosses upper confidence intervals.
+- **Q**: Lag value where ACF chart crosses upper confidence intervals.
